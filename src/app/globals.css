@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  /* HSL Colors - Vibrant Cultural Theme */
+  --color-saffron: 28 100% 60%;
+  --color-maroon: 350 70% 25%;
+  --color-gold: 45 100% 50%;
+  --color-ivory: 30 30% 98%;
+  --color-teal: 180 100% 25%;
+  
+  --bg-primary: hsl(var(--color-ivory));
+  --text-primary: hsl(350 40% 15%);
+  --accent-primary: hsl(var(--color-saffron));
+  --accent-secondary: hsl(var(--color-maroon));
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 200, 100, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 153, 51, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(128, 0, 32, 0.05) 0%, transparent 40%);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Glassmorphism Card */
+.form-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: var(--glass-shadow);
+  margin-top: 2rem;
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input Styles */
+.input-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent-secondary);
+}
+
+input[type="text"], textarea {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid transparent;
+  border-bottom: 2px solid rgba(var(--color-maroon) / 0.1);
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-bottom-color: hsl(var(--color-saffron));
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Rating Grid */
+.matrix-container {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.matrix-table th {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.matrix-table td {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.matrix-table td:first-child {
+  border-radius: 12px 0 0 12px;
+  font-weight: 600;
+}
+
+.matrix-table td:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.radio-custom {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(var(--color-maroon) / 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+}
+
+.radio-custom:checked {
+  background: hsl(var(--color-maroon));
+  border-color: hsl(var(--color-maroon));
+  box-shadow: 0 0 0 4px rgba(var(--color-maroon) / 0.1);
+}
+
+/* Star Rating */
+.rating-pills {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.rating-pill {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(var(--color-maroon) / 0.1);
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.rating-pill:hover {
+  background: rgba(var(--color-saffron) / 0.1);
+  border-color: hsl(var(--color-saffron));
+}
+
+.rating-pill.active {
+  background: hsl(var(--color-maroon));
+  color: white;
+  border-color: hsl(var(--color-maroon));
+}
+
+/* Button */
+.submit-btn {
+  background: linear-gradient(135deg, hsl(var(--color-maroon)), hsl(var(--color-saffron)));
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px -5px rgba(var(--color-maroon) / 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(var(--color-maroon) / 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .form-card {
+    padding: 1.5rem;
+  }
+}
