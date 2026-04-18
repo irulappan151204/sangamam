@@ -91,7 +91,7 @@ export default function SurveyForm() {
           <input type="text" id="class_section" name="class_section" required placeholder="e.g. Grade 5 - B" />
         </div>
         <div className="input-group">
-          <label htmlFor="ward_participated_in">Ward participated in 🎭</label>
+          <label htmlFor="ward_participated_in">Your Ward participated in 🎭</label>
           <input type="text" id="ward_participated_in" name="ward_participated_in" required placeholder="e.g. Dance, Drama" />
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function SurveyForm() {
           🎭 Program Experience
         </h2>
         <div className="input-group">
-          <label htmlFor="enjoyed_most">3. Which part of the event did you enjoy the most?</label>
+          <label htmlFor="enjoyed_most">3. Which event of the program did you enjoy the most?</label>
           <textarea id="enjoyed_most" name="enjoyed_most" rows={3} placeholder="Tell us about your favorite moments..." />
         </div>
         
@@ -201,7 +201,7 @@ export default function SurveyForm() {
           <textarea id="liked_most" name="liked_most" rows={3} placeholder="Your thoughts..." />
         </div>
         <div className="input-group">
-          <label htmlFor="suggestions">6. Any suggestions for improvement?</label>
+          <label htmlFor="suggestions">6. Suggestions for improvement, if any?</label>
           <textarea id="suggestions" name="suggestions" rows={3} placeholder="Help us improve future events..." />
         </div>
       </section>
