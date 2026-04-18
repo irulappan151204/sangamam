@@ -43,7 +43,7 @@ export default function Home() {
         >
           <p style={{ fontWeight: 600, fontSize: "1.1rem" }}>Dear Parent,</p>
           <p style={{ marginTop: "0.5rem", opacity: 0.9 }}>
-            We value your feedback and would love to hear your thoughts on our **Sangamam 2025-2026**.
+            We value your feedback and would love to hear your reflection on our Sangamam 2025-2026.
             Your responses will help us improve future events. 😊
           </p>
         </div>
